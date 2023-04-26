@@ -22,7 +22,6 @@ service shopify:OrdersService on webhookListener {
     }
 
     remote function onOrdersCreate(shopify:OrderEvent event) returns error? {
-        // Not Implemented
         record {} postResponse = check self.shippingClient->/orders.post(message = ());
     }
     remote function onOrdersCancelled(shopify:OrderEvent event) returns error? {
